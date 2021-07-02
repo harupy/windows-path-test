@@ -18,5 +18,6 @@ jobs:
           
           path = "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\pytest-of-runneradmin\\pytest-0\\test_parse_pip_requirements_wi1\\requirements1.txt"
           print(shlex.split(path))
+          print(shlex.split("C:\\Users\\me\\path\\to\\file"))
           print(os.path.join(os.path.dirname(path), path))
           
