@@ -30,7 +30,6 @@ jobs:
           python-version: 3.7
       - name: Install requirements
         run: |
-          Set-PSDebug -Trace 1
           pip install --upgrade pip
           pip --version
           echo pandas > requirements.txt
