@@ -20,4 +20,15 @@ jobs:
           print(shlex.split(path))
           print(shlex.split("C:\\Users\\me\\path\\to\\file"))
           print(os.path.join(os.path.dirname(path), path))
-          
+
+  windows-req:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - name: Install requirements
+        run: |
+          echo pandas > "req.txt"
+          pip install -r "$(pwd)\\req.txt"
