@@ -35,6 +35,6 @@ jobs:
           pip --version
           echo pandas > requirements.txt
           echo "-r $(pwd)\requirements.txt" > other-requirements.txt
-          cat req1.txt
-          cat req2.txt
+          cat requirements.txt
+          cat other-requirements.txt
           pip install -r "$(pwd)\ other-requirements.txt"
