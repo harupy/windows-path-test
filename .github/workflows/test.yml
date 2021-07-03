@@ -4,7 +4,7 @@ on: pull_request
 
 jobs:
   windows:
-    runs-on: windows
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
@@ -13,4 +13,27 @@ jobs:
       - name: Run tests
         shell: python
         run: |
-          print("hello world")
+          import os
+          import shlex
+          
+          path = "C:\\Users\\RUNNER~1\\AppData\\Local\\Temp\\pytest-of-runneradmin\\pytest-0\\test_parse_pip_requirements_wi1\\requirements1.txt"
+          print(shlex.split(path))
+          print(shlex.split("C:\\Users\\me\\path\\to\\file"))
+          print(os.path.join(os.path.dirname(path), path))
+
+  windows-req:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - name: Install requirements
+        run: |
+          pip install --upgrade pip
+          pip --version
+          echo pandas > requirements.txt
+          echo "-r '$(pwd)\requirements.txt'" > other_requirements.txt
+          cat requirements.txt
+          cat other_requirements.txt
+          pip install -r "$(pwd)\other_requirements.txt"
