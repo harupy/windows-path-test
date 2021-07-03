@@ -30,5 +30,8 @@ jobs:
           python-version: 3.7
       - name: Install requirements
         run: |
-          echo pandas > "req.txt"
-          pip install -r "$(pwd)\\req.txt"
+          echo pandas > req1.txt
+          echo "-r $(pwd)\\req.txt" > req2.txt
+          cat req1.txt
+          cat req2.txt
+          pip install -r "$(pwd)\\req2.txt"
