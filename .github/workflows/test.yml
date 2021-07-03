@@ -37,4 +37,4 @@ jobs:
           echo "-r $(pwd)\requirements.txt" > other-requirements.txt
           cat requirements.txt
           cat other-requirements.txt
-          pip install -r "$(pwd)\ other-requirements.txt"
+          pip install -r "$(pwd)\other-requirements.txt"
