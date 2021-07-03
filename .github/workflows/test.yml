@@ -30,8 +30,11 @@ jobs:
           python-version: 3.7
       - name: Install requirements
         run: |
-          echo pandas > req1.txt
-          echo "-r $(pwd)\req.txt" > req2.txt
+          Set-PSDebug -Trace 1
+          pip install --upgrade pip
+          pip --version
+          echo pandas > requirements.txt
+          echo "-r $(pwd)\requirements.txt" > other-requirements.txt
           cat req1.txt
           cat req2.txt
-          pip install -r "$(pwd)\req2.txt"
+          pip install -r "$(pwd)\ other-requirements.txt"
